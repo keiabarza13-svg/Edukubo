@@ -1,0 +1,4 @@
+venv/
+server_rpi/venv/
+__pycache__/
+*.pyc
