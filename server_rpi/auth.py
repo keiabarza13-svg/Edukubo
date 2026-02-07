@@ -1,5 +1,5 @@
-from server_rpi.database import get_connection
-from server_rpi.student_model import create_student_model
+from database import get_connection
+from student_model import create_student_model
 import bcrypt
 
 # ---------------------------------------------
