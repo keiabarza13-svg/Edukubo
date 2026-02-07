@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduKubo - Offline Learning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>EduKubo</h1>
+        <p>Offline Adaptive Learning System</p>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer style="margin-top: 50px; text-align: center; font-size: 12px;">
+        <p>Server Status: Online | Battery: Solar OK</p>
+    </footer>
+
+</body>
+</html>

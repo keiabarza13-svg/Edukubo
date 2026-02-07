@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="text-align: center; margin-bottom: 30px;">
+    <h2>Story Library</h2>
+    <p>Select a story to begin reading.</p>
+</div>
+
+{% for story in stories %}
+    <div class="story-card">
+        <h3>{{ story['title'] }}</h3>
+        
+        <p style="font-size: 14px;">
+            <strong>Grade Level:</strong> {{ story['grade_level'] }} | 
+            <strong>Difficulty:</strong> {{ story['difficulty_level'] }}
+        </p>
+
+        <a href="/story/{{ story['story_id'] }}" class="btn">READ NOW</a>
+    </div>
+{% endfor %}
+
+{% endblock %}

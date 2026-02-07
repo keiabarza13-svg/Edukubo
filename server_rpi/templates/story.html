@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <a href="/" class="btn" style="margin-bottom: 20px;">← Back to Library</a>
+
+    <div style="border: 2px solid black; padding: 20px; margin-top: 20px;">
+        <h1 style="text-align: center; text-transform: uppercase;">
+            {{ story['title'] }}
+        </h1>
+        
+        <hr style="border: 1px solid black; margin: 20px 0;">
+
+        <div style="font-size: 20px; line-height: 1.8; text-align: justify; font-family: serif;">
+            {{ story['content'] }}
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <p>Finished reading?</p>
+        <a href="#" class="btn">START QUIZ</a>
+    </div>
+{% endblock %}
