@@ -1,5 +1,6 @@
 from database import get_connection
-from student_model import create_student_model
+from algorithm.irt import create_student_model
+from algorithm.bkt import create_skill_mastery
 import bcrypt
 
 # ---------------------------------------------
@@ -115,5 +116,6 @@ def login(username: str, password: str):
         }
     else:
         return {"success": False, "message": "Incorrect password"}
+
 
 
