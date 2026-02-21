@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduKubo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
+body{
+  background:#F1F5F9;
+  display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+  width:260px;
+  min-height:100vh;
+  background:linear-gradient(180deg,#0EA5A4,#2563EB);
+  color:white;
+  padding:30px 20px;
+}
+.logo{
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:40px;
+}
+.menu{
+  margin-top:30px;
+}
+.menu div{
+  margin:15px 0;
+  cursor:pointer;
+  opacity:.9;
+}
+.menu div:hover{
+  opacity:1;
+}
+
+/* MAIN */
+.main{
+  flex:1;
+  padding:40px;
+}
+.search{
+  width:100%;
+  max-width:600px;
+  padding:15px 20px;
+  border-radius:12px;
+  border:none;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  margin-bottom:40px;
+}
+.title{
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+.subtitle{
+  color:#64748B;
+  margin-bottom:30px;
+}
+
+/* LEVEL CARDS */
+.levels{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+.card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-5px);
+}
+.card-top{
+  height:140px;
+  background:linear-gradient(120deg,#38BDF8,#22C55E);
+  position:relative;
+}
+.badge{
+  position:absolute;
+  top:15px;
+  right:15px;
+  background:#FACC15;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+}
+.card-content{
+  padding:20px;
+}
+.card h3{
+  margin-bottom:10px;
+}
+.card p{
+  font-size:14px;
+  color:#64748B;
+  margin-bottom:15px;
+}
+.progress{
+  height:8px;
+  background:#E2E8F0;
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:15px;
+}
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:#22C55E;
+}
+button{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  background:#2563EB;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+button:hover{
+  background:#1D4ED8;
+}
+
+/* STORIES SECTION */
+#storiesContainer{
+  display:none;
+  margin-top:50px;
+}
+#storiesContainer.show{
+  display:block;
+}
+.stories-title{
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+.back-button{
+  width:auto;
+  padding:10px 20px;
+  margin-bottom:20px;
+  background:#64748B;
+}
+.back-button:hover{
+  background:#475569;
+}
+.story-tabs{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+  gap:15px;
+}
+.story-tab{
+  background:white;
+  border:2px solid #E2E8F0;
+  border-radius:10px;
+  padding:20px;
+  text-align:center;
+  cursor:pointer;
+  transition:0.3s;
+}
+.story-tab:hover{
+  border-color:#2563EB;
+  box-shadow:0 5px 15px rgba(37, 99, 235, 0.2);
+}
+.story-tab.active{
+  border-color:#2563EB;
+  background:#2563EB;
+  color:white;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  body{
+    flex-direction:column;
+  }
+  .sidebar{
+    width:100%;
+    min-height:auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo">EduLevel</div>
+  <div>Welcome back, Student ✨</div>
+
+  <div class="menu">
+    <div>Dashboard</div>
+    <div>My Progress</div>
+    <div>Library</div>
+    <div>Settings</div>
+  </div>
+</div>
+
+<div class="main">
+  <input class="search" placeholder="Search lessons or topics...">
+
+  <div class="title">Choose Your Level</div>
+  <div class="subtitle">Select your learning difficulty below</div>
+
+  <div class="levels">
+
+    <div class="card">
+      <div class="card-top"><div class="badge">Level 1</div></div>
+      <div class="card-content">
+        <h3>Beginner</h3>
+        <p>Simple stories and basic grammar.</p>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <button>Start Level</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><div class="badge">Level 2</div></div>
+      <div class="card-content">
+        <h3>Elementary</h3>
+        <p>Expand vocabulary and comprehension.</p>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <button>Start Level</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><div class="badge">Level 3</div></div>
+      <div class="card-content">
+        <h3>Intermediate</h3>
+        <p>Paragraph analysis and structure.</p>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <button>Start Level</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><div class="badge">Level 4</div></div>
+      <div class="card-content">
+        <h3>Advanced</h3>
+        <p>Deep comprehension and logic.</p>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <button>Start Level</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><div class="badge">Level 5</div></div>
+      <div class="card-content">
+        <h3>Expert</h3>
+        <p>Critical thinking and mastery.</p>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <button>Start Level</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Stories Container -->
+  <div id="storiesContainer">
+    <button class="back-button" onclick="hideStories()">← Back to Levels</button>
+    <div class="stories-title">Level 1 Stories</div>
+    <div class="story-tabs" id="storyTabs"></div>
+  </div>
+</div>
+
+<script>
+  // Generate story tabs when page loads
+  function initializeStories() {
+    const storyTabsContainer = document.getElementById('storyTabs');
+    for (let i = 1; i <= 10; i++) {
+      const storyTab = document.createElement('div');
+      storyTab.className = 'story-tab';
+      storyTab.textContent = `Sample story ${i}`;
+      storyTab.onclick = () => selectStory(storyTab);
+      storyTabsContainer.appendChild(storyTab);
+    }
+  }
+
+  // Show stories when Level 1 button is clicked
+  function showStories() {
+    document.getElementById('storiesContainer').classList.add('show');
+    document.querySelector('.levels').style.display = 'none';
+  }
+
+  // Hide stories and show levels again
+  function hideStories() {
+    document.getElementById('storiesContainer').classList.remove('show');
+    document.querySelector('.levels').style.display = 'grid';
+  }
+
+  // Handle story selection
+  function selectStory(element) {
+    document.querySelectorAll('.story-tab').forEach(tab => {
+      tab.classList.remove('active');
+    });
+    element.classList.add('active');
+  }
+
+  // Add click event to Level 1 Start Level button
+  document.addEventListener('DOMContentLoaded', function() {
+    initializeStories();
+    const firstLevelButton = document.querySelector('.card:first-child button');
+    if (firstLevelButton) {
+      firstLevelButton.onclick = showStories;
+    }
+  });
+</script>
